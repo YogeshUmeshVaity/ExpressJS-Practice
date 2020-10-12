@@ -1,9 +1,8 @@
-import express, { Request, Response } from 'express'
-
+import express, { NextFunction, Request, Response } from 'express'
 const app = express()
 
-app.get('/', (request: Request, response: Response) => {
-  response.send(`Welcome to Express!`)
+app.use('/', (request: Request, response: Response, next: NextFunction) => {
+  console.log('Welcome')
 })
 
-app.listen(3000)
+app.listen(4000)
